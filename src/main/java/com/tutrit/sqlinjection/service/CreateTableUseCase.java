@@ -57,7 +57,7 @@ public class CreateTableUseCase {
 
     public void sanitize(String sql) {
         if (';' == sql.charAt(sql.length() - 1)) {
-            if (ONLY_LETTER_OR_SPACE.matcher(sql.substring(0, sql.length() - 2)).matches()) return;
+            if (ONLY_LETTER_OR_SPACE.matcher(sql.substring(0, sql.length() - 1)).matches()) return;
         } else {
             if (ONLY_LETTER_OR_SPACE.matcher(sql).matches()) return;
         }
